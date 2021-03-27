@@ -6,6 +6,7 @@
     <title>L R Patel Sports Complex</title>
     <script src="https://kit.fontawesome.com/dd4ae78545.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/glider.css">
 </head>
 <body>
     
@@ -61,19 +62,26 @@
     <div class="container text-center">
         <h1 class="section-title">Gallery</h1>
         <span class="title-underline"></span>
-        <div class="photo-gallery">
-            <img class="photo photo-1" src="gallery/10.JPG" alt="">
-            <img class="photo photo-2" src="gallery/6.JPG" alt="">
-            <img class="photo photo-3" src="gallery/3.JPG" alt="">
-            <img class="photo photo-4" src="gallery/4.JPG" alt="">
-            <img class="photo photo-5" src="gallery/5.JPG" alt="">
-            <img class="photo photo-6" src="gallery/2.JPG" alt="">
-            <img class="photo photo-7" src="gallery/7.JPG" alt="">
-            <img class="photo photo-8" src="gallery/8.JPG" alt="">
-            <img class="photo photo-9" src="gallery/9.JPG" alt="">
-            <img class="photo photo-10" src="gallery/1.JPG" alt="">
-            <img class="photo photo-11" src="gallery/11.JPG" alt="">
-            <img class="photo photo-12" src="gallery/12.JPG" alt="">
+        <div class="glider-contain multiple">
+            <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="glider-wrap">
+                <div class="photo-gallery glider">
+                    <img class="photo photo-1" src="gallery/10.JPG" alt="">
+                    <img class="photo photo-2" src="gallery/6.JPG" alt="">
+                    <img class="photo photo-3" src="gallery/3.JPG" alt="">
+                    <img class="photo photo-4" src="gallery/4.JPG" alt="">
+                    <img class="photo photo-5" src="gallery/5.JPG" alt="">
+                    <img class="photo photo-6" src="gallery/2.JPG" alt="">
+                    <img class="photo photo-7" src="gallery/7.JPG" alt="">
+                    <img class="photo photo-8" src="gallery/8.JPG" alt="">
+                    <img class="photo photo-9" src="gallery/9.JPG" alt="">
+                    <img class="photo photo-10" src="gallery/1.JPG" alt="">
+                    <img class="photo photo-11" src="gallery/11.JPG" alt="">
+                    <img class="photo photo-12" src="gallery/12.JPG" alt="">
+                </div>
+            </div>
+            <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
+            <div role="tablist" class="dots"></div>
         </div>
     </div>
 </section>
@@ -136,7 +144,7 @@
                 <div>
                     <i class="fas fa-map-marked"></i> L R Patel Sports Complex, Bhimrad, Surat- 395007
                 </div>
-                <div>
+                <div class="contact-social">
                     <a href="https://www.facebook.com/lrpatelSC" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
                     <a href="https://www.instagram.com/lrpatelsc/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
                 </div>
@@ -163,6 +171,56 @@
         <p>Design & Developed by <a href="http://prashaant.in/" target="_blank"><strong>Prashant</strong></a></p>
     </div>
 </footer>
+
+<!-- Glider js -->
+<script src="./js/glider.js"></script>
+<script>
+//     new Glider(document.querySelector('.glider'), {
+//   slidesToScroll: 2,
+//   slidesToShow: 3,
+//   draggable: true,
+//   dots: '.dots',
+//   arrows: {
+//     prev: '.glider-prev',
+//     next: '.glider-next'
+//   }
+// });
+
+
+new Glider(document.querySelector('.glider'), {
+  // Mobile-first defaults
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  scrollLock: true,
+  dots: '.dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+  responsive: [
+    {
+      // screens greater than >= 768px
+      breakpoint: 768,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 'auto',
+        slidesToScroll: 'auto',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        itemWidth: 150,
+        duration: 0.25
+      }
+    }
+  ]
+});
+</script>
 
 </body>
 </html>
